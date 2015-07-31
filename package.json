@@ -1,0 +1,28 @@
+{
+  "name": "allcountjs-mailgun",
+  "description": "AllcountJS Mailgun integration",
+  "keywords": [
+    "rapid",
+    "business",
+    "application",
+    "development",
+    "data-centric",
+    "RAD"
+  ],
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allcount/allcountjs-mailgun"
+  },
+  "dependencies": {
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "homepage": "http://allcountjs.com",
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  },
+  "scripts": {
+    "pretest": "jshint ."
+  }
+}
