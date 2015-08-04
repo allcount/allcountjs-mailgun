@@ -15,6 +15,7 @@
     "url": "https://github.com/allcount/allcountjs-mailgun"
   },
   "dependencies": {
+    "q": "^1.4.1"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
