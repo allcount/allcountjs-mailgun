@@ -15,15 +15,19 @@
     "url": "https://github.com/allcount/allcountjs-mailgun"
   },
   "dependencies": {
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "superagent": "^1.3.0"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
   "homepage": "http://allcountjs.com",
   "devDependencies": {
-    "jshint": "^2.8.0"
+    "chai": "^3.2.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5"
   },
   "scripts": {
-    "pretest": "jshint ."
+    "pretest": "jshint .",
+    "test": "./node_modules/.bin/mocha ./"
   }
 }

@@ -4,10 +4,10 @@ var q = require('q');
 
 exports.installModule = function (injection) {
     injection.bindMultiple('compileServices', [
-        'mailgunIntegrationService'
+        'MailgunService'
     ]);
 
-    injection.bindFactory('mailgunIntegrationConfig', function (app, appAccessRouter, express, mailgunIntegrationService, securityService) {
+    injection.bindFactory('mailgunIntegrationConfig', function (app, appAccessRouter, express, MailgunService, securityService) {
             return {
                 configure: function () {
                     app.all('/api/mailgun/incoming', function (req, res, next) {
@@ -15,7 +15,7 @@ exports.installModule = function (injection) {
                             Message: req.body
                         }, function () {
                             return q(securityService.asSystemUser(function () {
-                                return mailgunIntegrationService.config.propertyValue('onMessage');
+                                return MailgunService.config.propertyValue('onMessage');
                             })).then(function () {
                                 res.sendStatus(200);
                             }).catch(function (err) {
@@ -32,5 +32,5 @@ exports.installModule = function (injection) {
         'mailgunIntegrationConfig'
     ]);
 
-    injection.bindFactory('mailgunIntegrationService', require(require('path').join(__dirname, 'mailgun-integration-service.js')));
+    injection.bindFactory('MailgunService', require(require('path').join(__dirname, 'mailgun-integration-service.js')));
 };
