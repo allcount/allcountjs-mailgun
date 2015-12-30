@@ -18,7 +18,7 @@ module.exports = function () {
     service.sendMessage = function (data) {
         var future = Q.defer();
         request.
-            post('https://api.mailgun.net/v3/' + data.domain + '.mailgun.org/messages').
+            post('https://api.mailgun.net/v3/' + data.domain + '/messages').
             send(data.message).
             auth('api', data.key).
             type('form').
